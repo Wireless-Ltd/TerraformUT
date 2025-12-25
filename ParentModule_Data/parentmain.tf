@@ -13,6 +13,7 @@ module "vnet_ut" {
     vnet_address_space    = ["10.0.0.0/16"]
 }
 
+
 module "frontend_subnet" {
     depends_on = [module.vnet_ut]
     source                = "../ChildModules/subnet_module"
@@ -71,7 +72,7 @@ module "Frontend_virtual_machine" {
     vnet_name = "vnet_ut"
     common_subnet_name = "frontendsubnet_ut"
     common_pip_name = "pip_frontend_ut"
-    key_vault_name = "G30-KeyVault"
+    key_vault_name = "B17G30"
     username_secret_name = "vm-username-frt" #this is the name of secret, can be given manually if creating from portal
     password_secret_name = "vm-password-frt"
 }
@@ -96,7 +97,7 @@ module "backend_virtual_machine" {
     vnet_name = "vnet_ut"
     common_subnet_name = "backendsubnet_ut"
     common_pip_name = "pip_backend_ut"
-    key_vault_name = "G30-KeyVault"
+    key_vault_name = "B17G30"
     username_secret_name = "vm-username-bk"
     password_secret_name = "vm-password-bk"
 }

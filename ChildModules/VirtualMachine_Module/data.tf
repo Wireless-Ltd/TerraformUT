@@ -24,7 +24,7 @@ data "azurerm_key_vault_secret" "vm-password" {
 
  data "azurerm_key_vault" "kv" {
   name                = var.key_vault_name
-  resource_group_name = "RG_B17_KV"
+  resource_group_name = "B17_KeyVault"
  }
 
 
